@@ -1,0 +1,119 @@
+/* Full-width video styling */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+}
+
+    .video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* General aesthetic */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #90B3AF; /* Very light blue */
+    color: #F5F4F2; /* Soft teal for text */
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #FFABAB; /* Soft pink for headings */
+    text-transform: uppercase;
+    margin-bottom: 1.5rem; /* Adjusted margin with rem */
+    font-size: 2rem;
+    text-align: center; /* Center the text */
+}
+
+
+p {
+    color: #fefff1; /* Soft teal text */
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem; /* Rounded corners for images */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* Card styling */
+.card, .event-card {
+    background-color: #054150; /* Dark teal for cards */
+    padding: 1.25rem; /* Padding with rem */
+    border-radius: 1rem; /* Rounded corners */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 0; /* Margin for spacing between cards and sections */
+    max-width: 90%; /* Responsive card size */
+    margin-left: auto; /* Center cards */
+    margin-right: auto; /* Center cards */
+}
+
+    .card-body, .event-card h3 {
+        color: #E7DBBC; /* Light beige for text */
+    }
+
+/* Music card text color */
+.music-facts .card-body, .music-facts .event-card h3 {
+    color: #F5F4F2; /* White for text inside music cards */
+}
+
+.btn {
+    background-color: #FF6F61; /* Soft coral for buttons */
+    color: #FFFFFF; /* White for button text */
+    padding: 0.625rem 1.25rem; /* Padding with rem */
+    border-radius: 0.5rem; /* Rounded corners for buttons */
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+}
+
+    .btn:hover {
+        background-color: #FF9B8D; /* Light coral for hover */
+        color: #FFFFFF; /* White text */
+    }
+
+/* Section styles */
+.featured-news {
+    background-color: #FFE4E1; /* Light salmon for sections */
+    padding: 3rem 0; /* Space between sections */
+    margin: 2rem 0; /* Vertical space between sections */
+    border-radius: 1rem; /* Rounded corners */
+}
+
+.music-facts {
+    background-color: #E0F7FA; /* Light teal for music section */
+    padding: 2rem 0; /* Space between sections */
+    margin: 2rem 0; /* Vertical space between sections */
+    border-radius: 1rem; /* Rounded corners */
+}
+
+.events-section {
+    background-color: #FFE4E1; /* Light salmon for sections */
+    padding: 2rem 0; /* Space between sections */
+    margin: 2rem 0; /* Vertical space between sections */
+    border-radius: 1rem; /* Rounded corners */
+}
+
+.music-facts p, .music-facts h2 {
+    color: #3D5A6D; /* Soft teal for text in facts section */
+}
+
+.news-section {
+    background-color: #FAF3E0; /* Pale peach for music news */
+    padding: 2rem 0; /* Space between sections */
+}
+
+.label {
+    color: #334d47
+}
+
+.formText {
+    color: #3c4256
+}

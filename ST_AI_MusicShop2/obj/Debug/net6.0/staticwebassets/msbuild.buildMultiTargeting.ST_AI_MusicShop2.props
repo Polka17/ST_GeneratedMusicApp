@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ST_AI_MusicShop2.props" />
+</Project>

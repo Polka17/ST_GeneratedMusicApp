@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Home - Music Shop";
+}
+
+<div class="container-fluid">
+    <!-- Full-width, muted video below the nav -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="~/images/homeVid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Featured News Section -->
+    <section class="featured-news">
+        <h2>Latest Music News</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/album.jpg" alt="New Album Releases">
+                    <div class="card-body">
+                        <h3>New Album Releases</h3>
+                        <p>Explore the latest albums from your favorite artists, available on CD, vinyl, and digital formats.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/vinyl.jpg" alt="Vinyl Comeback">
+                    <div class="card-body">
+                        <h3>Vinyl's Comeback</h3>
+                        <p>Vinyl records are back with a bang! Explore our collection of classic and new releases on vinyl.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/concert.jpg" alt="Upcoming Concerts">
+                    <div class="card-body">
+                        <h3>Upcoming Concerts</h3>
+                        <p>Stay tuned for live performances by top artists and exclusive in-store sessions!</p>
+                        <a href="#" class="btn">Explore Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Facts Section -->
+    <section class="music-facts">
+        <h2>Did You Know?</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Music has a powerful effect on the brain. Research shows that music can improve mood, reduce stress, and even enhance memory!</p>
+            </div>
+            <div class="col-md-6">
+                <img src="~/images/relax.jpg" alt="Music and Memory" class="img-fluid rounded">
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="events-section">
+        <h2>Upcoming Events</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="event-card">
+                    <h3>Record Store Day</h3>
+                    <p>Join us for a vinyl extravaganza with discounts, giveaways, and live DJ sets all day long.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="event-card">
+                    <h3>Live Music Jam</h3>
+                    <p>Attend our open mic night and enjoy live performances by local talents. Free entry!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

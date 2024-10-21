@@ -1,0 +1,127 @@
+﻿@model ST_AI_MusicShop2.Models.Album
+
+@{
+    ViewData["Title"] = "Edit Album";
+}
+
+<div class="container mt-5">
+    <h2>Edit Album</h2>
+
+    <form asp-action="Edit" asp-route-id="@Model.Id" enctype="multipart/form-data">
+
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="PicturePath" />
+
+        <div class="form-group">
+            <label asp-for="Title" class="control-label label"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Artist" class="control-label label"></label>
+            <input asp-for="Artist" class="form-control" />
+            <span asp-validation-for="Artist" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price" class="control-label label"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description" class="control-label label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PicturePath" class="control-label label"></label>
+            <input type="file" name="pictureFile" class="form-control" />
+            <span asp-validation-for="PicturePath" class="text-danger"></span>
+        </div>
+        
+
+
+        <div id="specificFields">
+            @if (Model is CD || Model is Vinyl)
+            {
+                <div class="form-group">
+                    <label class="label">Size</label>
+                    <select name="size" class="form-control">
+                        @foreach (var sizeOption in ViewBag.Sizes)
+                        {
+                            var isSelected = (Model is CD cd && cd.Size.ToString() == sizeOption.ToString()) ||
+                            (Model is Vinyl vinyl && vinyl.Size.ToString() == sizeOption.ToString())
+                            ? "selected"
+                            : "";
+
+                            <option value="@sizeOption"> @isSelected>@sizeOption</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Edition</label>
+                    <select name="edition" class="form-control">
+                        @foreach (var editionOption in ViewBag.Editions)
+                        {
+                            var isSelected = (Model is CD cd && cd.Edition.ToString() == editionOption.ToString()) ||
+                            (Model is Vinyl vinyl && vinyl.Edition.ToString() == editionOption.ToString())
+                            ? "selected"
+                            : "";
+
+                            <option value="@editionOption"> @isSelected>@editionOption</option>
+                        }
+                    </select>
+                </div>
+            }
+
+            @if (Model is DigitalAlbum)
+            {
+                <div class="form-group">
+                    <label class="label">Digital Points</label>
+                    <input name="digitalPoints" class="form-control" type="number" step="0.01" value="@((Model as DigitalAlbum)?.DigitalScore)" />
+                </div>
+            }
+        </div>
+
+        <button type="submit" class="btn btn-warning">Save Changes</button>
+    </form>
+</div>
+
+<script>
+    function showSpecificFields() {
+        const albumType = '@(Model.GetType().Name)';
+        const specificFields = document.getElementById("specificFields");
+
+        specificFields.style.display = "none";
+
+        if (albumType === "CD" || albumType === "Vinyl" || albumType === "DigitalAlbum") {
+            specificFields.style.display = "block";
+        }
+    }
+
+    window.onload = showSpecificFields;
+</script>
+
+<style>
+    .container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .btn-warning {
+        width: 100%;
+    }
+</style>
